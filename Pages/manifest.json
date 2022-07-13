@@ -1,0 +1,21 @@
+{
+    "name": "MEDREC",
+    "icons": [
+        {
+            "src": "./images/logo192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "./images/512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "scope": "/",
+    "start_url": "/",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "theme_color": "#ffffff",
+    "description": "MEDREC"
+}

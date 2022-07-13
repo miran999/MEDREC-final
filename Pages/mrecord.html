@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Medical Record</title> 
+        <link rel="stylesheet" href="mrecord.css">  
+        <link rel="manifest" href="manifest.json">
+        <!-- ios support -->
+      <link rel="apple-touch-icon" href="/Images/icons/icon-96x96.png">
+      <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
+    </head>
+    <body>
+        <div class="medicalrecord">
+            <h1>Medical Record</h1>
+            
+        </div>
+
+        <div class="main">
+            <form>
+                <!-- Table -->
+                <table class="content-table">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Previous</th>
+
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>11.01 ml</td>
+                        </tr>
+                        <tr class="active-row">
+                            <td>2</td>
+                            <td>11.02 ml</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td><input type="text">11.03ml</td>
+                        </tr>
+                        <tr class="active-row">
+                            <td>4</td>
+                            <td>11.04ml</td>
+                        </tr>
+                        <!-- <tr>
+                            <td>5</td>
+                            <td>11.05 ml</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>11.06 ml</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>11.07 ml</td> -->
+                        </tr>
+                    </tbody>
+                </table>
+                
+
+
+                 <!-- for capturing photo -->
+                <!-- <div class="contentarea">
+                    <h2>Capture photo</h2>
+                    <div class= "camera">
+                        <video id = "video">video stream is not avaliable</video>
+                    </div>
+                    <div><button id="startbutton">Take photo</button></div>
+                    <canvas id="canvas"></canvas>
+                    <div class="output">
+                        <img id="photo" alt="The screen capture will appear in this box">
+                    </div>
+                </div>
+
+
+                script of capturing photo
+                <script>
+                    (function()
+                     {
+                         var width = 320;
+                         var height =0;
+                         var streaming = false;
+
+                         var video = null;
+                         var canvas = null;
+                         var photo = null;
+                         var startbutton = null;
+
+                         function startup()
+                         {
+                             video = document.getElementById('video');
+                             canvas = document.getElementById('canvas');
+                             photo = document.getElementById('photo');
+
+                             startbutton = document.getElementById('startbutton');
+
+                             navigator.mediaDevices.getUserMedia({
+                                 video: true,
+                                 audio: false
+                             }).then(function(stream)
+                             {
+                                 video.srcObject = stream;
+                                 video.play();
+                             }).catch(function(err){
+                                 console.log("An error occurred: "+err);
+                             });
+
+                             video.addEventListener('canplay', function(ev)
+                             {
+                                 if(!streaming)
+                                 {
+                                     height = video.videoHeight / (video.videowidth / width);
+
+                                     if(isNaN(height)){
+                                         height = width / (4 / 3);
+                                     }
+                                     video.setAttribute('width', width);
+                                     video.setAttribute('height', height);
+                                     canvas.setAttribute('width', width);
+                                     canvas.setAttribute('height', height);
+                                     streaming = true;
+                                 }
+                                
+                             }, false);
+
+                             startbutton.addEventListener('click', function(ev)
+                             {
+                                 takepicture();
+                                 ev.preventDefault();
+                             }, false );
+
+                             clearphoto();
+                         }
+
+                         function clearphoto()
+                         {
+                             var context = canvas.getContext('2d');
+                             context.fillstyle = "#AAA";
+                             context.fillRect(0,0, canvas.width , canvas.height);
+                             var data = canvas.toDataURL('image/png');
+                             photo.setAttribute('src',data);
+                         }
+
+                         function takepicture()
+                         {
+                             var context = canvas.getContext('2d');
+                             if(width && height)
+                             {
+                                 canvas.width = width;
+                                 canvas.height = height;
+                                 context.drawImage(video,0,0,width,height);
+                                 var data = canvas.toDataURL('image/png');
+                                 photo.setAttribute('src', data);
+                             }
+                             else 
+                             {
+                                 clearphoto();
+                             }
+                         }
+
+                         window.addEventListener('load', startup, false);
+                     })();
+                </script> 
+
+                for uploading photo
+                <div class= "container">
+                    <div class="wrapper">
+                        <div class="image">
+                            <img src="" alt="">
+                        </div>
+                        <div class="content">
+                            <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                            <div class="text">No file chosen, yet!</div>  
+                        </div>
+                        <div id="cancel-btn"><i class="fas fa-times"></i></div>
+                        <div class="file-name">File name here</div>
+                    </div>
+                    <input id="default-btn" type ="file" hidden>
+                    <button onclick="defaultBtnActive()" id="custom-btn">Choose a file</button>
+                </div>
+                 
+
+                script of uploading photo
+                <script>
+                    const wrapper = document.querySelector(".wrapper");
+                    const fileName = document.querySelector(".file-name");
+                    const cancelBtn = document.querySelector("#cancel-btn");
+                    const defaultBtn = document.querySelector("#default-btn");
+                    const customBtn = document.querySelector("#custom-btn");
+                    const img = document.querySelector("img");
+                    let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\5\+\~\_ ]+$/;
+
+                    function defaultBtnActive()
+                    {
+                        defaultBtn.click();
+                    }
+
+                    defaultBtn.addEventListener("change", function()
+                    {
+                        const file = this.files[0];
+                        if (file)
+                        {
+                            const reader = new FileReader();
+                            reader.onload = function()
+                            {
+                                const result = reader.result;
+                                img.src = result ;
+                                wrapper.classList.add("active");
+                            }
+                            cancelBtn.addEventListener("click", function()
+                            {
+                                img.src = "" ;
+                                wrapper.classList.remove("active");
+                            });
+                            reader.readAsDataURL(file);
+                            
+                        }
+                        if(this.value)
+                        {
+                            let valueStore = this.value.match(regExp);
+                            fileName.textContent = valueStore;
+                        }
+                    });
+                </script> -->
+
+
+            </form>
+        </div>
+     </body>
+</html>

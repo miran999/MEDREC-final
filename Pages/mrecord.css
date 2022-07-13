@@ -1,0 +1,279 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body 
+{
+    background-image: url(Images/Img.jpg);
+    background-position: center;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+
+.medicalrecord
+{
+    position: relative;
+    width: 100%;
+    background-color: black;
+    margin: auto;
+    color: #ffffff;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    border-radius: 15px 15px 0px 0px;
+}
+.main
+{
+    background-color: rgba(0, 0, 0, 0.288);
+    width: 100%;
+    margin: auto;
+}
+form
+{
+    width: 1200px ;
+    padding: 10px;
+    margin: auto;
+}
+
+
+.content-table
+{
+    width: 330px;
+    margin: auto;
+    margin-left: 80px;
+    margin-top: 130px;
+    background-color: white;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden ;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr
+{
+    
+    background-color: #86acb8;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td
+{
+    padding: 12px 15px;
+}
+
+.content-table tbody tr
+{
+    border-bottom: 1px solid #ddddddd;
+}
+
+.content-table tbody tr.active-row
+{
+    
+    color: #86acb8;
+
+}
+
+.content-table tbody tr:nth-of-type(even)
+{
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type
+{
+    border-bottom: 2px solid #009879;
+}
+
+#video
+{
+    position: relative;
+    margin: auto;
+    margin-left: 300px;
+    margin-top: -890px;
+    border: 1px solid black;
+    width: 320px;
+    height: 240px;
+}
+
+
+#photo
+{
+    margin-left:157px;
+    margin: auto;
+    border: 1px solid black;
+    width: 320px;
+    height: 240px;
+    
+}
+
+#canvas
+{
+    display: none;
+}
+
+
+.camera
+{
+    width: 340px;
+    display: inline-block;
+}
+
+
+.output
+{
+    width: 340px;
+    display: inline-block;
+}
+
+
+#startbutton
+{
+    display: block;
+    position: relative;
+    left: 700px;
+    top: -80;
+    bottom: 36px;
+    padding: 5px;
+    background-color: #6a67ce;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 1.0);
+    cursor: pointer;
+}
+
+.contentarea 
+{
+    font-size: 16px;
+    font-family: Arial;
+    text-align: center;
+}
+
+h2 
+{
+    position: relative;
+    left: 150px;
+    top: -237px;
+    padding: 5px;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 1.0);
+}
+
+.container
+{
+    padding-bottom: 200px;
+    height: 350px;
+    width: 430px;
+    margin-left: 1050px;
+    margin-top: -520px;
+}
+
+.container .wrapper
+{
+    position: relative;
+    height: 250px;
+    width: 400px;
+    border-radius: 10px;
+    background: #fff;
+    border: 2px dashed #5b5b7b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.wrapper.active
+{
+    border: none;
+}
+
+.wrapper .image
+{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper .image img
+{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.wrapper .icon
+{
+    font-size: 100px;
+    color: #9658fe;
+}
+
+.wrapper .text
+{
+    font-size: 20px;
+    font-weight: 500;
+    color: #5b5b7b;
+}
+
+.wrapper #cancel-btn
+{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #9658fe;
+    display: none;
+}
+
+.wrapper.active:hover #cancel-btn
+{
+    display: block;
+}
+
+.wrapper #cancel-btn:hover
+{
+    color: #9658fe;
+}
+
+.wrapper .file-name
+{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: #fff;
+    padding: 8px 0;
+    font-size: 18px;
+    text-align: center;
+    background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+}
+
+.wrapper.active:hover .file-name
+{
+    display: block;
+}
+
+.container #custom-btn
+{
+    margin-top: 30px;
+    width: 419px;
+    height: 50px;
+    display: block;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+}
+
+

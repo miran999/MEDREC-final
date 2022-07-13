@@ -1,0 +1,21 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "."
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "keywords": [
+    "."
+  ],
+  "author": ".",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^9.6.7"
+  }
+}
