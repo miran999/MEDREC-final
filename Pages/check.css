@@ -219,66 +219,59 @@ nav ul li a {
     display: flex ;
 } */
 
-footer {
-  /* position: relative; */
-  width: 100%;
-  height: 160px;
+footer{
+	position: relative;
+	width: 100%;
+	height: 260px;
   bottom: 0px;
-  /* background: rgb(141, 141, 141); */
+	/* background: rgb(141, 141, 141); */
   background-color: white;
-  /* display: flex; */
-  /* flex-direction: column; */
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
   justify-items: center;
-  margin: auto;
+
+
 }
-footer p:nth-child(1) {
-  font-size: 30px;
-  color: black;
-  margin-bottom: 40px;
-  font-weight: bold;
-  margin: auto;
-  /* margin-bottom: 30px; */
-  width: 200px;
-  padding: 15px 15px;
+footer p:nth-child(1){
+	font-size: 30px;
+	color: black;
+	margin-bottom: 40px;
+	font-weight: bold;
 }
-footer p:nth-child(2) {
-  color: black;
-  font-size: 30px;
-  width: 500px;
-  /* margin-bottom: 30px; */
-  text-align: center;
-  line-height: 26px;
-  margin: auto;
-  padding: 15px 15px;
+footer p:nth-child(2){
+	color: black;
+	font-size: 30px;
+	width: 500px;
+  margin-bottom: 30px;
+	text-align: center;
+	line-height: 26px;
 }
 
-.social {
-  display: flex;
-  height: 25vh;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
-}
-.social a {
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: black;
-  border-radius: 50%;
-  margin: 22px 10px;
-  color: white;
-  text-decoration: none;
-  font-size: 60px;
+.social
+{
+	display: flex;
+  height : 100vh;
+} 
+.social a{
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background:  black;
+	border-radius: 50%;
+	margin: 22px 10px;
+	color: white;
+	text-decoration: none;
+	font-size: 60px;
   padding: 15px 15px;
 }
-.social a:hover {
-  transform: scale(1.3);
-  transition: 0.3s;
-}
+.social a:hover{
+	transform: scale(1.3);
+	transition: .3s;
+} 
 
 .content-table thead tr {
   background-color: rgba(31, 139, 130, 0.7);
@@ -310,6 +303,7 @@ footer p:nth-child(2) {
 }
 .col-md-8 {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   justify-items: center;
@@ -336,6 +330,7 @@ footer p:nth-child(2) {
   margin: auto;
   background: white;
   position: relative;
+
 }
 .prescription {
   width: 660px;
@@ -664,13 +659,50 @@ span.date {
   }
 }
 
-/* form{
-    display: flex;
+.buttonn{
+  background-color: rgba(31, 139, 130, 0.7);
+  padding: 15px 25px;
+  margin-top: 10px;
+  text-size-adjust: bold;
+  text-decoration-color: #111;
+  
+}
+
+form{
+    display: block;
     align-items: center;
-    margin-left: 650px;
-    padding: 10px;
+    justify-content: center;
+    justify-items: center;
+    padding: 15px;
+    margin-left: 50px;
+  
+}
+
+/* .form2{
+  display: block;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    padding: 15px;
+    margin-left: 80px;
 } */
 
+.label1{
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: solid;
+  background-color: rgba(31, 139, 130, 0.7);
+  padding: 10px;
+  color: #f3f3f3;
+  text-size-adjust: 100px;
+
+}
+/* p{
+  background-color: #009688;
+  padding: 5px;
+} */
 /* .image::-webkit-file-upload-button {
   visibility: hidden;
 } */
