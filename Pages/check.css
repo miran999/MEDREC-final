@@ -698,7 +698,7 @@ span.date {
   background: -webkit-linear-gradient(top, #009688, #009688);
 } */
 
-#myInput {
+/* #myInput {
   /* background-image: url('/css/searchicon.png');  */
   background-repeat: no-repeat; /* Do not repeat the icon image */
   width: 50; /* Full-width */
@@ -707,13 +707,13 @@ span.date {
   border: 1px solid #ddd; /* Add a grey border */
   margin-bottom: 12px; /* Add some space below the input */
   background-color: #009688;
-}
+} */
 
 #myUL {
   /* Remove default list styling */
-  list-style-type: none;
+  /* list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 0; */
   /* display: none ; */
 }
 
@@ -730,11 +730,65 @@ span.date {
     font-size: 18px; 
     color: black; 
     display: block; 
-  }
+  } */
   
-  #myUL li a:hover:not(.header) {
+  /* #myUL li a:hover:not(.header) {
     background-color: #eee; 
   } */
+
+  .dropbtn {
+    background-color: #3a9d90;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 400px;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #3a9d90;
+  }
+  
+  #myInput {
+    box-sizing: border-box;
+    background-image: url('searchicon.png');
+    background-position: 14px 12px;
+    background-repeat: no-repeat;
+    font-size: 16px;
+    padding: 14px 20px 12px 45px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    width: 400px;
+  }
+  
+  #myInput:focus {outline: 3px solid #ddd;}
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
 
 /* input{
     background-color: #009688;

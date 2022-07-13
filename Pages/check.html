@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <head>
     <title>Check</title>
     <link
@@ -32,10 +32,10 @@
     ></script>
     <script type="text/javascript" src="jspdf.debug.js"></script>
     <meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>HTML-to-PDF Example</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<script src="html2pdf.bundle.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HTML-to-PDF Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="html2pdf.bundle.min.js"></script>
     <!-- <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -56,9 +56,9 @@
         <a href="index.html">Home</a>
         <a href="index.html">About Us</a>
         <a href="#footer">Contact Us</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()"
-          >&#9776;</a
-        >
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          &#9776;
+        </a>
       </div>
       <div class="container">
         <div class="main">
@@ -160,7 +160,7 @@
                               <h4 class="d-header">Notes</h4>
                               <p
                                 class="adv_text"
-                                style="outline: 0"
+                                style="outline: 0;"
                                 data-toggle="tooltip"
                                 data-placement="bottom"
                                 title="Click to edit."
@@ -186,7 +186,34 @@
                         <td width="60%" valign="top">
                           <!-- <span style="font-size: 3em">R<sub>x</sub></span>
                           <hr /> -->
-                          <div class="medicine">
+                          <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by medicine.." title="Type in a category">
+                          <ul id="myUL">
+                            <li><a href="#">Aspirin</a></li>
+                            <li><a href="#">Atenolol</a></li>
+                            <li><a href="#">Ascorbic acid</a></li>
+                          
+                            <li><a href="#">Botox</a></li>
+                            <li><a href="#">Boniva</a></li>
+
+                            <li><a href="#">Vitamin B 12</a></li>
+                            <li><a href="#">Vitamin B6</a></li>
+                            <li><a href="#">Vitamin D</a></li>
+                            <li><a href="#"> Vitamin C</a></li>
+                          </ul> -->
+                          <div class="dropdown">
+                            <button onclick="myFunction()" class="dropbtn">Medicines</button>
+                            <div id="myDropdown" class="dropdown-content">
+                              <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                              <a href="#">Asprin</a>
+                              <a href="#">Boniva</a>
+                              <a href="#">Blog</a>
+                              <a href="#">Contact</a>
+                              <a href="#">Vitamin</a>
+                              <a href="#">Support</a>
+                              <a href="#">Tools</a>
+                            </div>
+                          </div>
+                          <!-- <div class="medicine">
                             <section class="med_list"></section>
                             <div
                               id="add_med"
@@ -194,7 +221,7 @@
                               data-placement="right"
                             >
                               Click to add medicines ...
-                            </div>
+                            </div> -->
                           </div>
                         </td>
                       </tr>
@@ -203,6 +230,7 @@
                 </div>
                 <div id="snacking">Saving...</div>
                 <div id="snacked">Saved!</div>
+                <button>Save</button>
                 <!-- <a
                   href="https://selectpdf.com/export-to-pdf/?"
                   onclick="if(!this.urlAdded)href+='&url='+encodeURIComponent(location.href);this.urlAdded=1"
@@ -210,7 +238,7 @@
                 /></a> -->
                 <!-- <input type="button" id="btnExport" value="Export" onclick="Export()" /> -->
                 <!-- <a href = "check.html" >download</a> -->
-                <button onclick="printFunction()">Print</button>
+                <!-- <button onclick="printFunction()">Print</button> -->
                 <!-- <button onclick="generatePDF()">Download as PDF</button> -->
               </div>
             </div>
@@ -236,64 +264,84 @@
       <p>Contact Us</p>
       <p><b>How to reach our services?</b></p>
       <div class="social">
-        <a href="https://www.facebook.com/profile.php?id=100005210747809"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a href="https://www.linkedin.com/in/miran-mahmoud-616a42217/"
-          ><i class="fab fa-linkedin-in"></i
-        ></a>
+        <a href="https://www.facebook.com/profile.php?id=100005210747809">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/miran-mahmoud-616a42217/">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
       </div>
     </footer>
   </body>
   <!--the following is our scripts -->
   <script>
-    var menuButton = document.getElementById("menuButton");
-    var sideNav = document.getElementById("sideNav");
-    var menu = document.getElementById("menu");
+    var menuButton = document.getElementById('menuButton')
+    var sideNav = document.getElementById('sideNav')
+    var menu = document.getElementById('menu')
 
-    sideNav.style.right == "-250px";
+    sideNav.style.right == '-250px'
 
     menuButton.onclick = function () {
-      if (sideNav.style.right == "-250px") {
-        sideNav.style.right = "0";
-        menu.src = "/Images/menu_inverse.png";
+      if (sideNav.style.right == '-250px') {
+        sideNav.style.right = '0'
+        menu.src = '/Images/menu_inverse.png'
       } else {
-        sideNav.style.right = "-250px";
-        menu.src = "/Images/menu.png";
+        sideNav.style.right = '-250px'
+        menu.src = '/Images/menu.png'
       }
-    };
+    }
     var scroll = new SmoothScroll('a[href*="#"]', {
       speed: 1000,
       speedAsDuration: true,
-    });
+    })
   </script>
+  <script>
+    /* When the user clicks on the button,
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    function filterFunction() {
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      div = document.getElementById("myDropdown");
+      a = div.getElementsByTagName("a");
+      for (i = 0; i < a.length; i++) {
+        txtValue = a[i].textContent || a[i].innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          a[i].style.display = "";
+        } else {
+          a[i].style.display = "none";
+        }
+      }
+    }
+    </script>
   <!-- <script>
-        function myFunction() {
-            var input, filter, ul, li, a, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            ul = document.getElementById("myUL");
-            li = ul.getElementsByTagName("li");
-            
-            If we've got more than 1 char in <input>, show it, otherwise, hide
-            const inputDisplay = input.value.length > 1 ? 'block' : 'none';
-            ul.style.display = inputDisplay;
-            
-            for (i = 0; i < li.length; i++) {
-                a = li[i].getElementsByTagName("a")[0];
-                txtValue = a.textContent || a.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    li[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
-            }
-        </script> -->
+    function myFunction() {
+      // Declare variables
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName("li");
+    
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+    </script> -->
   <script>
     function Function() {
-      document.getElementById("demo").innerHTML =
-        "Aspirin can not be taken with Boniva";
+      document.getElementById('demo').innerHTML =
+        'Aspirin can not be taken with Boniva'
     }
   </script>
 
@@ -354,197 +402,197 @@
   <script>
     $(document).ready(function () {
       Date.prototype.calcDate = function (days) {
-        let date = new Date(this.valueOf());
-        date.setDate(date.getDate() + days);
+        let date = new Date(this.valueOf())
+        date.setDate(date.getDate() + days)
         return `(Untill ${date.getUTCDate()}-${
           date.getUTCMonth() + 1
-        }-${date.getUTCFullYear()})`;
-      };
-      let timeout;
+        }-${date.getUTCFullYear()})`
+      }
+      let timeout
       function snackSaving() {
-        let snack = document.getElementById("snacking");
-        snack.className = "show";
+        let snack = document.getElementById('snacking')
+        snack.className = 'show'
         timeout = setTimeout(() => {
-          alert("ERR: Conection timeout.");
-        }, 8000);
+          alert('ERR: Conection timeout.')
+        }, 8000)
       }
       function snackSaved() {
-        clearTimeout(timeout);
-        let snack = document.getElementById("snacking");
-        snack.className = snack.className.replace("show", "");
-        let snacked = document.getElementById("snacked");
-        snacked.className = "show";
+        clearTimeout(timeout)
+        let snack = document.getElementById('snacking')
+        snack.className = snack.className.replace('show', '')
+        let snacked = document.getElementById('snacked')
+        snacked.className = 'show'
         setTimeout(function () {
-          snacked.className = snacked.className.replace("show", "");
-        }, 1500);
+          snacked.className = snacked.className.replace('show', '')
+        }, 1500)
       }
-      $("[data-toggle=tooltip]").tooltip("show");
+      $('[data-toggle=tooltip]').tooltip('show')
       setTimeout(function () {
-        $("[data-toggle=tooltip]").tooltip("hide");
-      }, 5000); //hide tooltips after 5sec
+        $('[data-toggle=tooltip]').tooltip('hide')
+      }, 5000) //hide tooltips after 5sec
       $(document).keyup(function () {
-        $("[data-toggle=tooltip]").tooltip("hide");
-      }); //hide tooltip while typing
-      $(document).on("focusin keypress", ".med_name", function (e) {
-        let x = $(this).siblings("div.med_name_action");
-        if (e.type == "focusin") {
-          x.css("display", "block");
+        $('[data-toggle=tooltip]').tooltip('hide')
+      }) //hide tooltip while typing
+      $(document).on('focusin keypress', '.med_name', function (e) {
+        let x = $(this).siblings('div.med_name_action')
+        if (e.type == 'focusin') {
+          x.css('display', 'block')
         }
-        if (e.type == "keypress") {
-          if (e.keyCode == 13) x.children("button.save").click();
+        if (e.type == 'keypress') {
+          if (e.keyCode == 13) x.children('button.save').click()
         }
-      });
+      })
 
-      $(document).on("click", ".cancel-btn", function () {
-        $(this).parent().css("display", "none"); //hides save/cancel btn
-      });
-      $(document).on("click", ".med_name_action button.save", function () {
-        $(this).parent().css("display", "none");
-        $(".sc_time").removeClass("folded");
-      });
-      $(".med_name").keypress(function (e) {
+      $(document).on('click', '.cancel-btn', function () {
+        $(this).parent().css('display', 'none') //hides save/cancel btn
+      })
+      $(document).on('click', '.med_name_action button.save', function () {
+        $(this).parent().css('display', 'none')
+        $('.sc_time').removeClass('folded')
+      })
+      $('.med_name').keypress(function (e) {
         if (e.which == 13) {
-          $("#symp_save").click();
+          $('#symp_save').click()
         }
-      });
+      })
 
-      $(document).on("mousedown", ".sc", function (e) {
-        let x = $(this).siblings("div.med_when_action");
-        x.css("display", "block");
-      });
-      $(document).on("click", ".med_when_action button.save", function () {
-        $(this).parent().css("display", "none");
-        $(".select").removeClass("folded");
-      });
-      $("select.sc").change(function () {
-        let x = $(this).siblings("div.med_when_action");
-        x.css("display", "none");
-      });
+      $(document).on('mousedown', '.sc', function (e) {
+        let x = $(this).siblings('div.med_when_action')
+        x.css('display', 'block')
+      })
+      $(document).on('click', '.med_when_action button.save', function () {
+        $(this).parent().css('display', 'none')
+        $('.select').removeClass('folded')
+      })
+      $('select.sc').change(function () {
+        let x = $(this).siblings('div.med_when_action')
+        x.css('display', 'none')
+      })
 
-      $(document).on("mousedown", ".meal", function () {
-        let x = $(this).siblings("div.med_meal_action");
-        x.css("display", "block");
-      });
-      $(document).on("click", ".med_meal_action button.save", function () {
-        $(this).parent().css("display", "none");
-        $(".period").removeClass("folded");
-      });
+      $(document).on('mousedown', '.meal', function () {
+        let x = $(this).siblings('div.med_meal_action')
+        x.css('display', 'block')
+      })
+      $(document).on('click', '.med_meal_action button.save', function () {
+        $(this).parent().css('display', 'none')
+        $('.period').removeClass('folded')
+      })
 
-      $(document).on("focusin keypress", ".med_period", function (e) {
-        let x = $(this).siblings("div.med_period_action");
-        if (e.type == "focusin") {
-          x.css("display", "block");
+      $(document).on('focusin keypress', '.med_period', function (e) {
+        let x = $(this).siblings('div.med_period_action')
+        if (e.type == 'focusin') {
+          x.css('display', 'block')
         }
-        if (e.type == "keypress") {
-          if (e.keyCode == 13) x.children("button.save").click();
+        if (e.type == 'keypress') {
+          if (e.keyCode == 13) x.children('button.save').click()
         }
-      });
-      $(document).on("click", ".med_period_action button.save", function () {
-        $(this).parent().css("display", "none");
-      });
-      $(document).on("keyup", ".med_period", function () {
-        let period = $(this).val();
-        let num = +period.match(/\d+/g)[0];
-        let type = period.match(/\b(\w)/g)[1];
-        let days = null;
-        if (type == "d") days = num;
-        else if (type == "w") days = num * 7;
-        else if (type == "m") days = num * 30;
-        else if (type == "y") days = num * 365;
-        let span = $(this).siblings("span.date");
+      })
+      $(document).on('click', '.med_period_action button.save', function () {
+        $(this).parent().css('display', 'none')
+      })
+      $(document).on('keyup', '.med_period', function () {
+        let period = $(this).val()
+        let num = +period.match(/\d+/g)[0]
+        let type = period.match(/\b(\w)/g)[1]
+        let days = null
+        if (type == 'd') days = num
+        else if (type == 'w') days = num * 7
+        else if (type == 'm') days = num * 30
+        else if (type == 'y') days = num * 365
+        let span = $(this).siblings('span.date')
         if (days) {
-          let date = new Date().calcDate(days);
-          span.html(date);
+          let date = new Date().calcDate(days)
+          span.html(date)
         } else {
-          span.html("(Invalid time period)");
+          span.html('(Invalid time period)')
         }
-      });
+      })
 
-      $(".sc").keyup(function (e) {
-        if (isNaN(e.key)) return;
-        let el = $(this);
-        el = el.val().split("-").join("");
-        let finalVal = el.match(/.{1,1}/g).join("-");
-        $(this).val(finalVal);
-      });
+      $('.sc').keyup(function (e) {
+        if (isNaN(e.key)) return
+        let el = $(this)
+        el = el.val().split('-').join('')
+        let finalVal = el.match(/.{1,1}/g).join('-')
+        $(this).val(finalVal)
+      })
       function initLi(e) {
-        let txt = e.target.innerHTML;
-        if (!txt.includes("<li>")) {
-          let el = "<li></li>";
-          $(this).append(el);
+        let txt = e.target.innerHTML
+        if (!txt.includes('<li>')) {
+          let el = '<li></li>'
+          $(this).append(el)
         }
       }
-      $(".symptoms ul").focusin(initLi);
-      $(".symptoms ul").keyup(function (e) {
-        let fl = $(this).children().first();
-        let el = `<li>${e.target.textContent}</li>`;
+      $('.symptoms ul').focusin(initLi)
+      $('.symptoms ul').keyup(function (e) {
+        let fl = $(this).children().first()
+        let el = `<li>${e.target.textContent}</li>`
         if (fl.text().length < 1) {
-          $(this).html("");
-          $(this).append(el);
+          $(this).html('')
+          $(this).append(el)
         }
-      });
-      $("#symp_save").click(function () {
-        $(".symp_action").css("display", "none");
-      });
+      })
+      $('#symp_save').click(function () {
+        $('.symp_action').css('display', 'none')
+      })
 
-      $(".tests ul").focusin(initLi);
-      $(".tests ul").keyup(function () {
-        let fl = $(this).children().first();
-        let el = "<li></li>";
+      $('.tests ul').focusin(initLi)
+      $('.tests ul').keyup(function () {
+        let fl = $(this).children().first()
+        let el = '<li></li>'
         if (fl.text().length < 1) {
-          $(this).html("");
-          $(this).append(el);
+          $(this).html('')
+          $(this).append(el)
         }
-      });
-      $("#test_save").click(function () {
-        $(".test_action").css("display", "none");
-      });
+      })
+      $('#test_save').click(function () {
+        $('.test_action').css('display', 'none')
+      })
 
-      $(".symptoms ul").focusin(function () {
-        $(".symp_action").css("display", "block");
-      });
+      $('.symptoms ul').focusin(function () {
+        $('.symp_action').css('display', 'block')
+      })
 
-      $(".tests ul").focusin(function () {
-        $(".test_action").css("display", "block");
-      });
+      $('.tests ul').focusin(function () {
+        $('.test_action').css('display', 'block')
+      })
 
-      $(".advice p").focusin(function () {
-        $(".adv_action").css("display", "block");
-      });
+      $('.advice p').focusin(function () {
+        $('.adv_action').css('display', 'block')
+      })
 
-      $("#adv_save").click(function () {
-        $(".adv_action").css("display", "none");
-      });
+      $('#adv_save').click(function () {
+        $('.adv_action').css('display', 'none')
+      })
 
-      $(document).on("click", ".delete", function () {
-        let parent = $(this).closest(".med");
-        parent.remove();
-      });
+      $(document).on('click', '.delete', function () {
+        let parent = $(this).closest('.med')
+        parent.remove()
+      })
 
-      let med_id = 1;
-      $("#add_med").click(function () {
-        med_id++;
-        let sourceTemplate = $("#new_medicine").html();
-        Mustache.parse(sourceTemplate);
-        let sourceHTML = Mustache.render(sourceTemplate, { med_id });
-        let medicine = $(".med_list");
-        medicine.append(sourceHTML);
-      });
-    });
+      let med_id = 1
+      $('#add_med').click(function () {
+        med_id++
+        let sourceTemplate = $('#new_medicine').html()
+        Mustache.parse(sourceTemplate)
+        let sourceHTML = Mustache.render(sourceTemplate, { med_id })
+        let medicine = $('.med_list')
+        medicine.append(sourceHTML)
+      })
+    })
   </script>
 
   <script>
-    function printFunction() { 
-      window.print(); 
+    function printFunction() {
+      window.print()
     }
   </script>
 
   <script>
     function generatePDF() {
-        // Choose the element that our invoice is rendered in.
-        const element = document.getElementById('prescription_form');
-        // Choose the element and save the PDF for our user.
-        html2pdf().from(element).save();
+      // Choose the element that our invoice is rendered in.
+      const element = document.getElementById('prescription_form')
+      // Choose the element and save the PDF for our user.
+      html2pdf().from(element).save()
     }
-</script>
+  </script>
 </html>
